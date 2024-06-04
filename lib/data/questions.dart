@@ -2,23 +2,23 @@ import 'package:quiz_app/models/quiz_question.dart';
 
 const questions = [
   QuizQuestion(
-    'What are the main building blocks of Flutter UIs?',
-    [
+    text: 'What are the main building blocks of Flutter UIs?',
+    answers: [
       'Widgets',
       'Components',
       'Blocks',
       'Functions',
     ],
   ),
-  QuizQuestion('How are Flutter UIs built?', [
+  QuizQuestion(text: 'How are Flutter UIs built?', answers: [
     'By combining widgets in code',
     'By combining widgets in a visual editor',
     'By defining widgets in config files',
     'By using XCode for iOS and Android Studio for Android',
   ]),
   QuizQuestion(
-    'What\'s the purpose of a StatefulWidget?',
-    [
+    text: 'What\'s the purpose of a StatefulWidget?',
+    answers: [
       'Update UI as data changes',
       'Update data as UI changes',
       'Ignore data changes',
@@ -26,8 +26,9 @@ const questions = [
     ],
   ),
   QuizQuestion(
-    'Which widget should you try to use more often: StatelessWidget or StatefulWidget?',
-    [
+    text:
+        'Which widget should you try to use more often: StatelessWidget or StatefulWidget?',
+    answers: [
       'StatelessWidget',
       'StatefulWidget',
       'Both are equally good',
@@ -35,8 +36,8 @@ const questions = [
     ],
   ),
   QuizQuestion(
-    'What happens if you change data in a StatelessWidget?',
-    [
+    text: 'What happens if you change data in a StatelessWidget?',
+    answers: [
       'The UI is not updated',
       'The UI is updated',
       'The closest StatefulWidget is updated',
@@ -44,8 +45,8 @@ const questions = [
     ],
   ),
   QuizQuestion(
-    'How should you update data inside of StatefulWidgets?',
-    [
+    text: 'How should you update data inside of StatefulWidgets?',
+    answers: [
       'By calling setState()',
       'By calling updateData()',
       'By calling updateUI()',
