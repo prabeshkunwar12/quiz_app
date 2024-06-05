@@ -4,7 +4,11 @@ class AnswerButton extends StatelessWidget {
   final String text;
   final void Function() select;
 
-  const AnswerButton({super.key, required this.text, required this.select});
+  const AnswerButton({
+    super.key,
+    required this.text,
+    required this.select,
+  });
 
   @override
   Widget build(BuildContext context) {
