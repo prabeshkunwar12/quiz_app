@@ -46,7 +46,7 @@ class _QuizState extends State<Quiz> {
         ? StartScreen(switchScreen)
         : activeScreen == 'resultScreen'
             ? ResultsScreen(
-                restart: restart,
+                onRestart: restart,
                 answers: selectedAnswers,
               )
             : QuestionScreen(onSelectAnswer: chooseAnswer);

@@ -14,6 +14,7 @@ class QuestionSummary extends StatelessWidget {
           children: summary.map((data) {
             final correct = data['correct'] as bool;
             return Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 //number
                 Container(
@@ -41,43 +42,38 @@ class QuestionSummary extends StatelessWidget {
 
                 Expanded(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      AlignmentContainer(
-                        child: Text(
-                          data['question'] as String,
-                          style: const TextStyle(
-                            fontSize: 16,
-                            color: Colors.white,
-                          ),
+                      Text(
+                        data['question'] as String,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
                         ),
                       ),
                       const SizedBox(
                         height: 5,
                       ),
-                      AlignmentContainer(
-                        child: Text(
-                          data['user_answer'] as String,
-                          style: TextStyle(
-                            color: correct
-                                ? const Color.fromARGB(151, 255, 255, 255)
-                                : const Color.fromARGB(255, 145, 142, 175),
-                            fontSize: 15,
-                          ),
+                      Text(
+                        data['user_answer'] as String,
+                        style: TextStyle(
+                          color: correct
+                              ? const Color.fromARGB(151, 255, 255, 255)
+                              : const Color.fromARGB(255, 145, 142, 175),
+                          fontSize: 15,
                         ),
                       ),
-                      AlignmentContainer(
-                        child: !correct
-                            ? Text(
-                                data['correct_answer'] as String,
-                                style: const TextStyle(
-                                  color: Color.fromARGB(151, 255, 255, 255),
-                                  fontSize: 15,
-                                ),
-                              )
-                            : const SizedBox(
-                                height: 0,
+                      !correct
+                          ? Text(
+                              data['correct_answer'] as String,
+                              style: const TextStyle(
+                                color: Color.fromARGB(151, 255, 255, 255),
+                                fontSize: 15,
                               ),
-                      ),
+                            )
+                          : const SizedBox(
+                              height: 0,
+                            ),
                       const SizedBox(
                         height: 10,
                       )
@@ -89,19 +85,6 @@ class QuestionSummary extends StatelessWidget {
           }).toList(),
         ),
       ),
-    );
-  }
-}
-
-class AlignmentContainer extends StatelessWidget {
-  final Widget child;
-  const AlignmentContainer({super.key, required this.child});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.centerLeft,
-      child: child,
     );
   }
 }
